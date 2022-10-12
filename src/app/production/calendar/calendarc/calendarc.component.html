@@ -1,11 +1,6 @@
 <div class="surface-0 flex justify-content-center">
-    <div id="home" class="landing-wrapper overflow-hidden"  style="margin:9 auto, width=100px, height= 100px;" >
-            <br>
-            <br>
-            <br>
-            <div class="align-items-center">
-                <p-calendar style="display:block; margin-left: auto; margin-right: auto;"  [(ngModel)]="date" dateFormat="dd.mm.yy" [inline]="true" [showWeek]="false">
-                </p-calendar>
-            </div>
+    <div id="home" class="landing-wrapper overflow-hidden" style="display:flex; flex-wrap: nowrap; align-content: stretch;justify-content: center; padding-top:100px;">
+            <p-calendar [(ngModel)]="date" dateFormat="dd.mm.yy" [inline]="true" [showWeek]="false">
+            </p-calendar>
     </div>
-</div>
+</div>  
