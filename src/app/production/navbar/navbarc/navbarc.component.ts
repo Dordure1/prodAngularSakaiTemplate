@@ -13,7 +13,7 @@ export class NavbarcComponent implements OnInit {
       {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
       {label: 'check Calendar', icon: 'pi pi-fw pi-calendar', command:() => this.navToCalendar()},
       {label: 'Create an event', icon: 'pi pi-fw pi-pencil'},
-  ];
+    ];
    }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class NavbarcComponent implements OnInit {
   }
 
   navToLogin(){
-    
+    this.router.navigate(['./auth/login'])
   }
 
   navToRegister(){
