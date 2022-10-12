@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
   selector: 'app-homec',
-  templateUrl: './homec.component.html'
+  templateUrl: './homec.component.html',
 })
 export class HomecComponent implements OnInit {
+  date : Date = new Date()
 
-  constructor() { }
-
+  constructor(public layoutService : LayoutService) { 
+  }
   ngOnInit(): void {
   }
-
 }
