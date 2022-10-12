@@ -8,7 +8,8 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
         RouterModule.forRoot([
             /// module home
             {path:'',loadChildren:()=> import('./production/home/home.module').then(m=>m.HomeModule)},
-            
+            {path:'calendar', loadChildren:() => import('./production/calendar/calendar.module').then (m=>m.CalendarsModule)},
+
             {
                 /// sakai template
                 path: 'sakai', component: AppLayoutComponent,

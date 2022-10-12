@@ -7,7 +7,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
   templateUrl: './homec.component.html',
 })
 export class HomecComponent implements OnInit {
-  date : Date = new Date()
+
 
   constructor(public layoutService : LayoutService) { 
   }

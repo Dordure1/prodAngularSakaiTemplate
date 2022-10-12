@@ -8,6 +8,8 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { MenubarModule } from 'primeng/menubar';
 import { CalendarModule } from 'primeng/calendar';
 import { NavbarcComponent } from './navbarc/navbarc.component';
+import { MenuItemContent, MenuModule } from 'primeng/menu';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +23,10 @@ import { NavbarcComponent } from './navbarc/navbarc.component';
     RouterModule,
     TabMenuModule,
     MenubarModule,
+    MenuModule,
+    // MenuItemContent,
     CalendarModule,
+    FormsModule
   ]
 })
 export class NavbarModule { }

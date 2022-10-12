@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
@@ -11,14 +11,28 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
+import { MenubarModule } from 'primeng/menubar';
+import { FormsModule } from '@angular/forms';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ButtonModule } from 'primeng/button';
+import { MenuItemContent, MenuModule } from 'primeng/menu';
+import { NavbarcComponent } from './production/navbar/navbarc/navbarc.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent
+        AppComponent, NotfoundComponent, NavbarcComponent
     ],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        MenubarModule,
+        MenuModule,
+        FormsModule,
+        TabMenuModule,
+        ButtonModule,
+        CommonModule
+
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

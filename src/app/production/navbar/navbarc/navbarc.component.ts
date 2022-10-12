@@ -10,10 +10,10 @@ export class NavbarcComponent implements OnInit {
   constructor() {
     this.items = [
       {label: 'Home', icon: 'pi pi-fw pi-home'},
-      {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-      {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
-      {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-      {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+      {label: 'check Calendar', icon: 'pi pi-fw pi-calendar'},
+      {label: 'Create an event', icon: 'pi pi-fw pi-pencil'},
+      // {label: 'Documentation', icon: 'pi pi-fw pi-file'},
+      // {label: 'Settings', icon: 'pi pi-fw pi-cog'}
   ];
    }
 
