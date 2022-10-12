@@ -6,8 +6,12 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
 @NgModule({
     imports: [
         RouterModule.forRoot([
+            /// module home
+            {path:'',loadChildren:()=> import('./production/home/home.module').then(m=>m.HomeModule)},
+            
             {
-                path: '', component: AppLayoutComponent,
+                /// sakai template
+                path: 'sakai', component: AppLayoutComponent,
                 children: [
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UikitModule) },
@@ -17,9 +21,11 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) },
                 ],
             },
-            { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
-            { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
-            { path: 'pages/notfound', component: NotfoundComponent },
+            { path: 'sakai/auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
+            { path: 'sakai/landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
+            { path: 'sakai/pages/notfound', component: NotfoundComponent },
+
+
             { path: '**', redirectTo: 'pages/notfound' },
         ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
     ],
