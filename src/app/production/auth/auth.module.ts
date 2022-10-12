@@ -6,8 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { PasswordModule } from 'primeng/password';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { CheckboxModule } from 'primeng/checkbox';
     AuthRoutingModule,
     PasswordModule,
     FormsModule,
-    CheckboxModule
+    CheckboxModule,
+    ButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }
