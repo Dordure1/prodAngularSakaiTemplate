@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { AuthServicesService } from 'src/app/production/services/auth-services.service';
+import { AuthServicesService } from 'src/app/production/shared/services/auth-services.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   userName :string = ""
   password :string = ""
   constructor(public layoutService : LayoutService,
-              private authServe:AuthServicesService) { }
+              private authServe:AuthServicesService){ }
 
   ngOnInit(): void {
   }
