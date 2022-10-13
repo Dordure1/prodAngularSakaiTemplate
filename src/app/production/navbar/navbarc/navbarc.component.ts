@@ -30,9 +30,9 @@ export class NavbarcComponent implements OnInit {
   navToLogin(){
     this.router.navigate(['./auth/login'])
   }
-
+  
   navToRegister(){
-
+    this.router.navigate(['./auth/register'])
   }
 
 }

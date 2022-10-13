@@ -9,6 +9,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { MenubarModule } from 'primeng/menubar';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { DividerModule } from 'primeng/divider';
 
 
 
@@ -24,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     TabMenuModule,
     MenubarModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    DividerModule,
+    RouterModule
   ]
 })
 export class HomeModule { }
