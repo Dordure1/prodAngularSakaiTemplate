@@ -15,7 +15,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkUser(){
+    this.authServe.checklogin(this.userName,this.password).subscribe((user:any)=>{
+      if(user.length>=1){
+        this.logIn()
+      }
+      else{
+        return console.log("error")
+      }
+    }  
+    )
+  }
+  
   logIn(){
-    this.authServe.login()
+    this.authServe.login(this.userName, this.password)
   }
 }
