@@ -10,7 +10,6 @@ export class AlleventscComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }
