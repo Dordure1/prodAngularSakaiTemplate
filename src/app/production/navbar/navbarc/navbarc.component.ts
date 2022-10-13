@@ -12,10 +12,10 @@ export class NavbarcComponent implements OnInit {
     this.items = [
       {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
       {label: 'check Calendar', icon: 'pi pi-fw pi-calendar', command:() => this.navToCalendar()},
-      {label: 'Create an event', icon: 'pi pi-fw pi-pencil'},
+      {label: 'Check Events', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEvents()},
+      {label: 'Create an event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEventsCreation()},
     ];
    }
-
   ngOnInit(): void {
   }
 
@@ -33,6 +33,13 @@ export class NavbarcComponent implements OnInit {
   
   navToRegister(){
     this.router.navigate(['./auth/register'])
+  }
+  navToEvents(){
+    this.router.navigate(['./event'])
+  }
+  navToEventsCreation(){
+    this.router.navigate(['./event/create'])
+
   }
 
 }

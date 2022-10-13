@@ -10,6 +10,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
             {path:'',loadChildren:()=> import('./production/home/home.module').then(m=>m.HomeModule)},
             {path:'calendar', loadChildren:() => import('./production/calendar/calendar.module').then (m=>m.CalendarsModule)},
             {path:'auth',loadChildren:()=>import('./production/auth/auth.module').then(m=>m.AuthModule)},
+            {path:"event", loadChildren:()=>import('./production/event/event.module').then(m=>m.EventModule)},
 
             {
                 /// sakai template
