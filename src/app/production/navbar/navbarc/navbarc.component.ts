@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { AuthServicesService } from '../../shared/services/auth-services.service';
 
 @Component({
   selector: 'app-navbarc',
   templateUrl: './navbarc.component.html'
 })
 export class NavbarcComponent implements OnInit {
+  isConnect : boolean = false
   items: MenuItem[] = [];
-  constructor(private router : Router) {
+  constructor(private router : Router, private authServe : AuthServicesService) {
     this.items = [
       {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
       {label: 'check Calendar', icon: 'pi pi-fw pi-calendar', command:() => this.navToCalendar()},
@@ -17,6 +19,10 @@ export class NavbarcComponent implements OnInit {
     ];
    }
   ngOnInit(): void {
+    this.authServe.$isConnect.subscribe((isConnect:boolean)=>{
+      this.isConnect = isConnect
+    })
+
   }
 
   navToHome(){
@@ -39,7 +45,8 @@ export class NavbarcComponent implements OnInit {
   }
   navToEventsCreation(){
     this.router.navigate(['./event/create'])
-
   }
-
+  logOut(){
+    this.authServe.logOut()
+  }
 }

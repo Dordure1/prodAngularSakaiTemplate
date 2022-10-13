@@ -42,6 +42,12 @@ export class AuthServicesService {
     this.emit_isConnect()
   }
 
+  logOut(){
+    this.isConnect = false
+    localStorage.clear()
+    this.emit_isConnect()
+  }
+
   emit_isConnect(){
     this.$isConnect.next(this.isConnect)
   }
