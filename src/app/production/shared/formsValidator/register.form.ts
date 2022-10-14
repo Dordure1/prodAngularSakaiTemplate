@@ -9,11 +9,13 @@ export function generateMyForm(fb : FormBuilder, httpC : HttpClient) : FormGroup
         email : ["", {
                         validators : [Validators.required, Validators.email],
                         asyncValidators : [],
-                        /*updateOn : 'blur'*/
+                        updateOn : 'blur'
                     }
                 ],
         coopName : ["",{
-                        validators : [Validators.required, Validators.minLength(3)]
+                        validators : [Validators.required, Validators.minLength(3)],
+                        asyncValidators : [],
+                        updateOn : 'blur'
         }],
 
         password : ["", {
@@ -41,11 +43,11 @@ export function generateMyForm(fb : FormBuilder, httpC : HttpClient) : FormGroup
                         }
                 ]
     },
-    // {
-    //     //options  
-    //     validators : [matchPasswordValidator],
-    //     updateOn : 'blur'
-    // }
+    {
+        //options  
+        validators : [matchPasswordValidator],
+        updateOn : 'blur'
+    }
 
     )   
 }

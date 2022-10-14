@@ -7,7 +7,7 @@ export function matchPasswordValidator(controlGroup : AbstractControl){
         
         if(controlGroup.value["password"] != controlGroup.value["Vpassword"])
         {
-            error = { MatchPassword : "Les deux mots de passe ne correspondent pas..."}
+            error = { MatchPassword : "Passwords do not match.."}
         }
     }
     return error
