@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { generateMyForm } from '../../shared/formsValidator/register.form';
+import { generateMyForm } from '../../shared/formsValidator/registration/register.form';
 
 @Component({
   selector: 'app-register',
