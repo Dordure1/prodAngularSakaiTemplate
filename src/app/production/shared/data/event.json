@@ -35,6 +35,18 @@
       "date": "",
       "description": "<p>test dordure</p>",
       "id": 3
+    },
+    {
+      "organizationName": "test2",
+      "eventName": "test2",
+      "email": "dordure",
+      "city": "dordure",
+      "address": "dordure",
+      "addressNumber": 2,
+      "maxParticipants": 100,
+      "date": "2022-11-25T21:02",
+      "description": "<p>test2</p>",
+      "id": 4
     }
   ]
 }
