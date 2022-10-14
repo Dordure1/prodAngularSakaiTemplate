@@ -19,11 +19,14 @@ import { Table } from 'primeng/table';
     `]
 })
 export class EventcreationcComponent implements OnInit {
-  
+    eventDesc : string =""
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  createEvent(){
+    console.log("event creation")
   }
  
 }

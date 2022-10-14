@@ -16,6 +16,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
+import {EditorModule} from 'primeng/editor';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { ToastModule } from 'primeng/toast';
     MultiSelectModule,
     DropdownModule,
     ProgressBarModule,
-    ToastModule
+    ToastModule,
+    EditorModule,
 
   ]
 })
