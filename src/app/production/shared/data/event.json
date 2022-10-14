@@ -11,6 +11,18 @@
       "maxParticipants": 50,
       "date": "22/11/22 10:00",
       "description": "présentation de l'entrprise Belgrain"
+    },
+    {
+      "organizationName": "est",
+      "eventName": "test",
+      "email": "test",
+      "city": "test",
+      "address": "test",
+      "addressNumber": null,
+      "maxParticipants": 0,
+      "date": "",
+      "description": "",
+      "id": 2
     }
   ]
 }
