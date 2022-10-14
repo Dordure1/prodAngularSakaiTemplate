@@ -23,6 +23,18 @@
       "date": "",
       "description": "",
       "id": 2
+    },
+    {
+      "organizationName": "dordure",
+      "eventName": "dordure",
+      "email": "dordure",
+      "city": "dordure",
+      "address": "",
+      "addressNumber": 0,
+      "maxParticipants": 0,
+      "date": "",
+      "description": "<p>test dordure</p>",
+      "id": 3
     }
   ]
 }
