@@ -1,16 +1,16 @@
 {
-    "event":[
-        {
-            "id":1, 
-            "organizationName" : "Bel'grains",
-            "eventName" : "Bel'grains presentation",
-            "email" : "belgrain@belgrain.be",
-            "city": "liège",
-            "address": "rue de la ferme",
-            "addressNumber" : 2,
-            "maxParticipants" : 50,
-            "date" : "22/11/22 10:00",
-            "description" : "présentation de l'entrprise Belgrain"
-        }
-    ]
+  "event": [
+    {
+      "id": 1,
+      "organizationName": "Bel'grains",
+      "eventName": "Bel'grains presentation",
+      "email": "belgrain@belgrain.be",
+      "city": "liège",
+      "address": "rue de la ferme",
+      "addressNumber": 2,
+      "maxParticipants": 50,
+      "date": "22/11/22 10:00",
+      "description": "présentation de l'entrprise Belgrain"
+    }
+  ]
 }

@@ -1,5 +1,4 @@
 export interface eventTab {
-    id : number,
     organizationName : string,
     eventName : string,
     email : string,

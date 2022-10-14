@@ -7,49 +7,49 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="CompanyName">Organization name</label>
-                            <input type="text" class="form-control" id="CompanyName" placeholder="Organization name">
+                            <input [(ngModel)]="organizationName"  [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="CompanyName" placeholder="Organization name">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nameOfEvent">Name of event</label>
-                            <input type="text" class="form-control" id="nameOfEvent" placeholder="name of event">
+                            <input [(ngModel)]="eventName" type="text"  [ngModelOptions]="{standalone: true}" class="form-control" id="nameOfEvent" placeholder="name of event">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Contact Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <input [(ngModel)]="email" type="email"  [ngModelOptions]="{standalone: true}" class="form-control" id="inputEmail4" placeholder="Email">
                         </div>                   
                         <div class="form-group col-md-6">
                             <label for="inputCity">City of event</label>
-                            <input type="text" class="form-control" id="inputCity" placeholder="city">
+                            <input [(ngModel)]="city" type="text" [ngModelOptions]="{standalone: true}" class="form-control" id="inputCity" placeholder="city">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputAddress">Address of event</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <input [(ngModel)]="address" type="text" [ngModelOptions]="{standalone: true}" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="addressNumber">Number</label>
-                            <input type="number" class="form-control" id="addressNumber" placeholder="N°">
+                            <input [(ngModel)]="addressNumber"  [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="addressNumber" placeholder="N°">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="maxPerson">max participants</label>
-                            <input type="number" class="form-control" id="maxPerson" placeholder="max participants">
+                            <input [(ngModel)]="maxPers"  [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="maxPerson" placeholder="max participants">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="maxPerson">Hour</label>
-                            <input type="datetime-local" class="form-control" id="maxPerson" placeholder="Hour">
+                            <label for="date">date and hour</label>
+                            <input [(ngModel)]="date"  [ngModelOptions]="{standalone: true}" type="datetime-local" class="form-control" id="maxPerson" placeholder="Hour">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="maxPerson">Event descrption</label>
-                            <p-editor [style]="{'height':'320px'}">
+                            <label for="eventDesc">Event descrption</label>
+                            <p-editor [(ngModel)]="description" [ngModelOptions]="{standalone: true}" [style]="{'height':'320px'}">
                                 <ng-template pTemplate="header">
                                     <span class="ql-formats">
                                         <button type="button" class="ql-bold" aria-label="Bold"></button>
@@ -60,7 +60,6 @@
                             </p-editor>
                         </div>
                     </div>
-                 
                 <button (click)="createEvent()" type="submit" class="btn btn-primary">submit</button>
                 </form>
             </div>
