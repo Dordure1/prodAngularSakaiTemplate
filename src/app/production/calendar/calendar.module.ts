@@ -8,7 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { CalendarsRoutingModule } from './calendar-routing.module';
 
-import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+
 
 
 
@@ -22,7 +22,6 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
     RouterModule,
     ButtonModule,
     FormsModule,   
-    CalendarModule
   ]
 })
 export class CalendarsModule { }
