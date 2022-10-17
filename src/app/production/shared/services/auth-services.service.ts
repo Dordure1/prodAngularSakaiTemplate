@@ -16,6 +16,7 @@ export class AuthServicesService {
   
   constructor(private client :HttpClient) { }
 
+  
   verifyLogged(){
     let tmp = localStorage.getItem("isConnect")
     if (tmp=="true")

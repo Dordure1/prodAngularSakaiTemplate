@@ -47,6 +47,30 @@
       "date": "2022-11-25T21:02",
       "description": "<p>test2</p>",
       "id": 4
+    },
+    {
+      "organizationName": "doridurjozeid²j",
+      "eventName": "oijdzeoj",
+      "email": "jkedzkok",
+      "city": "ijedz",
+      "address": "okdezp",
+      "addressNumber": 2,
+      "maxParticipants": 50,
+      "date": "2022-10-21T16:54",
+      "description": "<p>desciçr'fe</p>",
+      "id": 5
+    },
+    {
+      "organizationName": "",
+      "eventName": "",
+      "email": "",
+      "city": "",
+      "address": "",
+      "addressNumber": 0,
+      "maxParticipants": 0,
+      "date": "",
+      "description": "",
+      "id": 6
     }
   ]
 }
