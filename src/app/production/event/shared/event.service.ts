@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { filterEventStoreDefs } from '@fullcalendar/angular';
 import { stringify } from 'querystring';
+import { map, Observable,filter } from 'rxjs';
 import { eventTab } from '../../shared/class/event';
 
 @Injectable({
@@ -34,5 +36,9 @@ export class EventService {
   createEvent(organizationName:string,eventName:string,email:string,city:string,address:string,addressNumber:number,maxPers:number, date:string, description:string){
     let tmpEvent : eventTab = {organizationName:organizationName,eventName:eventName, email:email,city:city,address:address, addressNumber:addressNumber, maxParticipants:maxPers, date:date,description:description}
     this.client.post<eventTab>(this.url + "event",tmpEvent).subscribe()
+  }
+
+  displayEvent(eventId : number):Observable<any>{
+    return this.client.get<any>(this.urlEvent + "event/" + eventId )
   }
 }
