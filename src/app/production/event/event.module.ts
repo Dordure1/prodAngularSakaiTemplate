@@ -17,6 +17,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 import {EditorModule} from 'primeng/editor';
+import { Paginator, PaginatorModule } from 'primeng/paginator';
 
 
 
@@ -41,6 +42,7 @@ import {EditorModule} from 'primeng/editor';
     ProgressBarModule,
     ToastModule,
     EditorModule,
+    PaginatorModule,
 
   ]
 })

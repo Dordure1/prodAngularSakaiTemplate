@@ -71,6 +71,18 @@
       "date": "",
       "description": "",
       "id": 6
+    },
+    {
+      "organizationName": "test3",
+      "eventName": "test3",
+      "email": "test3",
+      "city": "test3",
+      "address": "test3",
+      "addressNumber": 2,
+      "maxParticipants": 25,
+      "date": "2022-11-25T18:12",
+      "description": "<p>deziuhuiez</p>",
+      "id": 7
     }
   ]
 }

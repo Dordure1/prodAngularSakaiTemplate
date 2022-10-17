@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-youarec',
@@ -6,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YouarecComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  loginCoop(){
+    this.router.navigate(['./auth/login'])
+  }
+  loginUser(){
+    this.router.navigate(['./auth/login'])
+  }
+
+  registerUser(){
+    this.router.navigate(['./auth/register'])
+  }
+  registerCoop(){
+    this.router.navigate(['./auth/register'])
   }
 
 }
