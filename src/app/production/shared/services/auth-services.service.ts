@@ -30,14 +30,13 @@ export class AuthServicesService {
 
   }
 
-   checklogin(userName : string, password : string): Observable<user[]>{
+  checklogin(userName : string, password : string): Observable<user[]>{
     return this.client.get<user[]>(this.url + "user")
     .pipe(
       map(user=> user.filter(user =>user.userName === userName && user.password == password))) 
   }
 
   login(userName: string, password:string){ 
-
     this.isConnect = true
     localStorage.setItem("isConnect","true")
     this.emit_isConnect()

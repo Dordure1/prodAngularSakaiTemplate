@@ -18,13 +18,16 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 import {EditorModule} from 'primeng/editor';
 import { Paginator, PaginatorModule } from 'primeng/paginator';
+import { SingleeventviewComponent } from './singleeventview/singleeventview/singleeventview.component';
+import { CardModule } from 'primeng/card';
 
 
 
 @NgModule({
   declarations: [
     EventcreationcComponent,
-    AlleventscComponent
+    AlleventscComponent,
+    SingleeventviewComponent
   ],
   imports: [
     CommonModule,
@@ -43,6 +46,7 @@ import { Paginator, PaginatorModule } from 'primeng/paginator';
     ToastModule,
     EditorModule,
     PaginatorModule,
+    CardModule,
 
   ]
 })

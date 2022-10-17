@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/demo/api/customer';
 import { eventTab } from '../../shared/class/event';
 import { EventService } from '../shared/event.service';
@@ -20,7 +21,9 @@ export class AlleventscComponent implements OnInit {
   customers1: Customer[] = [];
   eventList: eventTab [] = [];
   constructor( 
-    private eventServe : EventService
+    private eventServe : EventService,
+    private router : Router, 
+    private activatedRoute : ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -44,8 +47,7 @@ export class AlleventscComponent implements OnInit {
     )
   }
 
-
-  checkEvent(){
-
+  checkEvent(eventId:number){
+    this.router.navigate([this.router.url,"event",eventId])
   }
 }
