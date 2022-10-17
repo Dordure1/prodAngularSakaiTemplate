@@ -9,13 +9,18 @@ import { PasswordModule } from 'primeng/password';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
+import { YouarecComponent } from './youare/youarec/youarec.component';
+import {SplitterModule} from 'primeng/splitter';
+import {CardModule} from 'primeng/card';
+
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     LogoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    YouarecComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +29,9 @@ import { ButtonModule } from 'primeng/button';
     FormsModule,
     CheckboxModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SplitterModule,
+    CardModule
   ]
 })
 export class AuthModule { }
