@@ -12,12 +12,6 @@ export function generateMyFormUser(fb : FormBuilder, httpC : HttpClient) : FormG
                         updateOn : 'blur'
                     }
                 ],
-        coopName : ["",{
-                        validators : [Validators.required, Validators.minLength(3)],
-                        asyncValidators : [],
-                        updateOn : 'blur'
-        }],
-
         password : ["", {
                             validators : [Validators.required, Validators.minLength(6)]
                         }

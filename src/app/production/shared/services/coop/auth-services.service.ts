@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { stringify } from 'querystring';
 import {BehaviorSubject, filter, map, Observable} from 'rxjs'
+import { newCoop } from '../../class/newCoop';
 import { user } from '../../class/users';
 
 @Injectable({
@@ -13,6 +14,17 @@ export class AuthServicesService {
   private user! : Observable<user[]>
   isConnect:boolean = false
   $isConnect: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.verifyLogged())
+
+
+  /// registration 
+  userName : string = ""
+  password : string = ""
+  organisationName : string =""
+  city : string =""
+  address:string =""
+  addressNumber : number = 0
+
+
   
   constructor(private client :HttpClient) { }
 
@@ -49,5 +61,11 @@ export class AuthServicesService {
 
   emit_isConnect(){
     this.$isConnect.next(this.isConnect)
+  }
+
+  registerInDB(userName:string, password:string , organisationName: string, city : string, address: string, addressNumber:number){
+    let tmpUser :newCoop = {userName, password, organisationName,city,address,addressNumber}
+    this.client.post<newCoop>(this.url + "coop", tmpUser).subscribe()
+
   }
 }

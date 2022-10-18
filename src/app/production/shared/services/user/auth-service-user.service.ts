@@ -1,12 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
+import { newUser } from '../../class/newUser';
 import { user } from '../../class/users';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceUserService {
+
+  /// for registration
+  userName:string =""
+  password : string = ""
+  city : string =""
+  address:string =""
+  addressNumber! : number 
+  ////
+
 
   private url : string = "http://localhost:3002/"
 
@@ -48,5 +58,11 @@ export class AuthServiceUserService {
 
   emit_isConnect(){
     this.$isConnectUser.next(this.isConnectUser)
+  }
+
+
+  registrationInDB(userName : string, password: string, city : string, address : string , addressNumber:number){
+    let tmpRegistration :newUser = { userName : userName, password :  password, city : city, address: address, addressNumber : addressNumber}
+    this.client.post<newUser>(this.url + "user", tmpRegistration).subscribe()
   }
 }
