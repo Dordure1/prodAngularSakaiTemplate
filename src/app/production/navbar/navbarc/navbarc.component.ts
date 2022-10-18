@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AuthServicesService } from '../../shared/services/coop/auth-services.service';
+import { AuthServiceUserService } from '../../shared/services/user/auth-service-user.service';
 
 @Component({
   selector: 'app-navbarc',
@@ -9,9 +10,18 @@ import { AuthServicesService } from '../../shared/services/coop/auth-services.se
 })
 export class NavbarcComponent implements OnInit {
   isConnect : boolean = false
+  isConnectUser : boolean = false
+  
   items: MenuItem[] = [];
-  constructor(private router : Router, private authServe : AuthServicesService) {
-    this.items = [
+  
+  constructor(
+    private router : Router, 
+    private authServe : AuthServicesService,
+    private authUserServe : AuthServiceUserService
+    ) {
+    
+    
+      this.items = [
       {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
       {label: 'check Calendar', icon: 'pi pi-fw pi-calendar', command:() => this.navToCalendar()},
       {label: 'Check Events', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEvents()},
@@ -21,6 +31,9 @@ export class NavbarcComponent implements OnInit {
   ngOnInit(): void {
     this.authServe.$isConnect.subscribe((isConnect:boolean)=>{
       this.isConnect = isConnect
+    })
+    this.authUserServe.$isConnectUser.subscribe((isConnectUser:boolean)=>{
+      this.isConnectUser = isConnectUser
     })
 
   }
@@ -45,5 +58,6 @@ export class NavbarcComponent implements OnInit {
   }
   logOut(){
     this.authServe.logOut()
+    this.authUserServe.logOut()
   }
 }
