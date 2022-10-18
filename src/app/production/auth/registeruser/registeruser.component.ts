@@ -30,7 +30,6 @@ export class RegisteruserComponent implements OnInit {
 
   myForm : FormGroup = generateMyFormUser(this.fb , this.client)
 
-
   constructor(
     private fb : FormBuilder,
     private client : HttpClient,
@@ -53,11 +52,9 @@ export class RegisteruserComponent implements OnInit {
       console.log(this.myForm)
     }
   }
-
   registrationInDB(){
     this.authUserServe.registrationInDB(this.userName, this.password, this.city, this.address, this.addressNumber)
     this.router.navigate([''])
-    
   }
 
 }
