@@ -1,14 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { EmailCheckServiceService } from "../../services/email-check-service.service";
+import { checkUserExists } from "./validators/checkUserExist.validators";
 import { matchPasswordValidator } from "./validators/matchPassword.validators";
 
-export function generateMyForm(fb : FormBuilder, httpC : HttpClient) : FormGroup{
+export function generateMyForm(fb : FormBuilder, httpC : HttpClient, emailCheckServe : EmailCheckServiceService) : FormGroup{
 
     return fb.group(
     /*controls : */{
         email : ["", {
                         validators : [Validators.required, Validators.email],
-                        asyncValidators : [],
+                        asyncValidators : [checkUserExists.checkUser(emailCheckServe)],
                         updateOn : 'blur'
                     }
                 ],

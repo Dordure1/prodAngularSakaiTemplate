@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { generateMyForm } from '../../shared/formsValidator/registration/register.form';
 import { AuthServicesService } from '../../shared/services/coop/auth-services.service';
+import { EmailCheckServiceService } from '../../shared/services/email-check-service.service';
 
 @Component({
   selector: 'app-register',
@@ -29,13 +30,14 @@ export class RegisterComponent implements OnInit {
     number : number
   }
 
-  myForm : FormGroup = generateMyForm(this.fb , this.client)
+  myForm : FormGroup = generateMyForm(this.fb , this.client, this.emailCheckServe)
 
   constructor(
     private fb : FormBuilder,
     private client : HttpClient,
     private authCoopServe : AuthServicesService,
-    private router : Router
+    private router : Router,
+    private emailCheckServe : EmailCheckServiceService
   ) { }
 
   ngOnInit(): void {

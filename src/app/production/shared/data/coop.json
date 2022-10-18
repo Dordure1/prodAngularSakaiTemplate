@@ -2,7 +2,7 @@
   "coop": [
     {
       "id": 1,
-      "userName": "admin",
+      "userName": "admin@admin",
       "password": "admin",
       "organisationName": "admin",
       "city": "",
