@@ -12,8 +12,8 @@ import { ButtonModule } from 'primeng/button';
 import { YouarecComponent } from './youare/youarec/youarec.component';
 import {SplitterModule} from 'primeng/splitter';
 import {CardModule} from 'primeng/card';
-import { LoginuserComponent } from './loginuser/loginuser/loginuser.component';
-import { RegisteruserComponent } from './registeruser/registeruser/registeruser.component';
+import { LoginuserComponent } from './loginuser/loginuser.component';
+import { RegisteruserComponent } from './registeruser/registeruser.component';
 
 
 

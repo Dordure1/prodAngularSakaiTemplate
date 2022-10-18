@@ -8,9 +8,10 @@ import { AuthServiceUserService } from 'src/app/production/shared/services/user/
   templateUrl: './loginuser.component.html'
 })
 export class LoginuserComponent implements OnInit {
-userName : string =""
-password : string = ""
-  authServe: any;
+    userName : string =""
+    password : string = ""
+    authServe: any;
+
   constructor(
     private loginUserServe : AuthServiceUserService,
     public layoutService : LayoutService,
