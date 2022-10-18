@@ -1,7 +1,5 @@
-import { HttpClient } from "@angular/common/http";
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from "@angular/forms";
 import { map, Observable,pipe } from "rxjs";
-import { observableToBeFn } from "rxjs/internal/testing/TestScheduler";
 import { EmailCheckServiceService } from "../../../services/email-check-service.service";
 
 export class checkUserExists{

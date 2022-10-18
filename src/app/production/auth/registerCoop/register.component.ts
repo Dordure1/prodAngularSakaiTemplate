@@ -20,15 +20,7 @@ export class RegisterComponent implements OnInit {
   addressNumber : number = 0
 
 
-  registerForm! : {
-    email : string,
-    coopName: string, 
-    password : string, 
-    Vpassword: string, 
-    city : string, 
-    address : string, 
-    number : number
-  }
+  
 
   myForm : FormGroup = generateMyForm(this.fb , this.client, this.emailCheckServe)
 

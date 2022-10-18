@@ -1,5 +1,8 @@
-load db user
+load db coop
 json-server --watch src/app/production/shared/data/coop.json --port 3000
 
 load db event 
 json-server --watch src/app/production/shared/data/event.json --port 3001
+
+load db user
+json-server --watch src/app/production/shared/data/user.json --port 3002
