@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { AuthServicesService } from 'src/app/production/shared/services/auth-services.service';
+import { AuthServicesService } from 'src/app/production/shared/services/coop/auth-services.service';
 
 @Component({
   selector: 'app-login',

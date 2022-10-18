@@ -1,13 +1,14 @@
 {
-    "user" : [
+    "user":[
         {
-            "id":1,
-            "userName" : "admin",
-            "password" : "admin",
-            "organisationName": "admin",
+            "id" : 1,
+            "email" : "admin",
+            "password" : "admin", 
             "city" : "",
-            "address": "",
-            "addressNumber":""
-        }
+            "address" : "",
+            "postalCode":"",
+            "number": "" 
+        } 
+
     ]
 }

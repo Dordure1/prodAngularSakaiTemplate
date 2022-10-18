@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { stringify } from 'querystring';
 import {BehaviorSubject, filter, map, Observable} from 'rxjs'
-import { user } from '../class/users';
+import { user } from '../../class/users';
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +27,10 @@ export class AuthServicesService {
     else {
       return false
     }
-
   }
 
   checklogin(userName : string, password : string): Observable<user[]>{
-    return this.client.get<user[]>(this.url + "user")
+    return this.client.get<user[]>(this.url + "coop")
     .pipe(
       map(user=> user.filter(user =>user.userName === userName && user.password == password))) 
   }

@@ -1,0 +1,13 @@
+{
+    "coop" : [
+        {
+            "id":1,
+            "userName" : "admin",
+            "password" : "admin",
+            "organisationName": "admin",
+            "city" : "",
+            "address": "",
+            "addressNumber":""
+        }
+    ]
+}

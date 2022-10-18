@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { AuthServicesService } from '../../shared/services/auth-services.service';
+import { AuthServicesService } from '../../shared/services/coop/auth-services.service';
 
 @Component({
   selector: 'app-navbarc',
@@ -33,7 +33,7 @@ export class NavbarcComponent implements OnInit {
     this.router.navigate(['/calendar'])
   }
 
-  navToLogin(){
+  navToLoginMain(){
     this.router.navigate(['./auth'])
   }
   

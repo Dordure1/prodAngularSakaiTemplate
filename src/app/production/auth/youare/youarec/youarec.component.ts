@@ -13,17 +13,17 @@ export class YouarecComponent implements OnInit {
   }
 
   loginCoop(){
-    this.router.navigate(['./auth/login'])
+    this.router.navigate(['./auth/loginCoop'])
   }
   loginUser(){
-    this.router.navigate(['./auth/login'])
+    this.router.navigate(['./auth/loginUser'])
   }
 
   registerUser(){
-    this.router.navigate(['./auth/register'])
+    this.router.navigate(['./auth/registerUser'])
   }
   registerCoop(){
-    this.router.navigate(['./auth/register'])
+    this.router.navigate(['./auth/registerCoop'])
   }
 
 }
