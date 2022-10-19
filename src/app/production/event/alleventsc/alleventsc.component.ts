@@ -9,17 +9,18 @@ import { EventService } from '../shared/event.service';
   templateUrl: './alleventsc.component.html'
 })
 export class AlleventscComponent implements OnInit {
-  test: {name :string } [] = [
-    {
-      name : "ee"
-    },
-    {
-      name : "coucou"
-    }
 
-  ]
-  customers1: Customer[] = [];
+  display : boolean = false
+
+  eventToShow : eventTab [] = []
+  allEventWithId :
+    {id:number, name : string , description : string , address : string, date : string , city : string} [] = []
+
   eventList: eventTab [] = [];
+
+
+
+
   constructor( 
     private eventServe : EventService,
     private router : Router, 
@@ -47,7 +48,23 @@ export class AlleventscComponent implements OnInit {
     )
   }
 
-  checkEvent(eventId:number){
-    this.router.navigate([this.router.url,"event",eventId])
-  }
+ async  checkEvent(eventId:number){
+    // this.router.navigate([this.router.url,"event",eventId])
+    // this.display = true
+    await this.eventServe.getAllEvent().then((allEvents)=>{
+      allEvents.forEach((element:any)=>{
+        element.forEach((res:any)=>{
+          if(res.id === eventId)
+            {
+              this.allEventWithId.push({id :res.id, name : res.eventName, description :  res.description, address : res.address, date : res.date, city : res.city})
+              console.log(this.allEventWithId);  
+            }
+        }
+        )       
+
+      })
+    })
+    
+    }
 }
+

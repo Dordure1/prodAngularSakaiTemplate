@@ -92,7 +92,14 @@
 				</ng-template>
     		</p-table>
 		</div>
+		<app-singleeventview
+			*ngFor = "let event of allEventWithId"
+			[name] =event.name
+			[description] = event.description
+			[city]="event.city"
+			[date]="event.date"
+			>
+		</app-singleeventview>
 	</div>
 </div>
-    </div>
 </div>

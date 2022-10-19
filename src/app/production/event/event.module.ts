@@ -17,9 +17,11 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 import {EditorModule} from 'primeng/editor';
-import { Paginator, PaginatorModule } from 'primeng/paginator';
-import { SingleeventviewComponent } from './singleeventview/singleeventview/singleeventview.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { SingleeventviewComponent } from './singleeventview/singleeventview.component';
 import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 
@@ -47,6 +49,9 @@ import { CardModule } from 'primeng/card';
     EditorModule,
     PaginatorModule,
     CardModule,
+    DialogModule,
+    ConfirmDialogModule,
+
 
   ]
 })
