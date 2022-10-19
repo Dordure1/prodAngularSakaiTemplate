@@ -23,7 +23,7 @@ export class NavbarcComponent implements OnInit {
     
       this.items = [
       {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
-      {label: 'check Calendar', icon: 'pi pi-fw pi-calendar', command:() => this.navToCalendar()},
+      {label: 'myEvent', icon: 'pi pi-fw pi-calendar', command:() => this.navToMyEvent()},
       {label: 'Check Events', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEvents()},
       {label: 'Create an event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEventsCreation()},
     ];
@@ -42,8 +42,8 @@ export class NavbarcComponent implements OnInit {
     this.router.navigate([''])
   }
 
-  navToCalendar(){
-    this.router.navigate(['/calendar'])
+  navToMyEvent(){
+    this.router.navigate(['/event/myevent'])
   }
 
   navToLoginMain(){
