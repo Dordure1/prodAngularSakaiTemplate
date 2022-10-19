@@ -23,16 +23,11 @@ export class EmailCheckServiceService {
 
           res.forEach(element => { 
             
-            if(element.userName == email){
-              console.log("ok");
-              console.log(element);
-              
+            if(element.userName == email){            
                tmp.push(element)
             }
-          })
-          
-          return tmp
-          
+          })    
+          return tmp      
         }
         )
       )
