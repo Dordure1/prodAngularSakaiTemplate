@@ -22,6 +22,7 @@ import { SingleeventviewComponent } from './singleeventview/singleeventview.comp
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { CoopeventmanagerComponent } from './coopeventmanager/coopeventmanager.component';
 
 
 
@@ -29,7 +30,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   declarations: [
     EventcreationcComponent,
     AlleventscComponent,
-    SingleeventviewComponent
+    SingleeventviewComponent,
+    CoopeventmanagerComponent
   ],
   imports: [
     CommonModule,
