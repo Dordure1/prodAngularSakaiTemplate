@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filterEventStoreDefs } from '@fullcalendar/angular';
 import { stringify } from 'querystring';
-import { map, Observable,filter } from 'rxjs';
+import { map, Observable,filter, pipe } from 'rxjs';
 import { eventTab } from '../../shared/class/event';
 
 @Injectable({
@@ -10,8 +10,8 @@ import { eventTab } from '../../shared/class/event';
 })
 export class EventService {
 
-  url: string = "http://localhost:3001/"
-
+  url: string = "http://localhost:3000/"
+  coopEvent : any [] = []
   organizationName : string=""
   eventName :string = ""
   email : string = ""
@@ -35,10 +35,29 @@ export class EventService {
 
   createEvent(organizationName:string,eventName:string,email:string,city:string,address:string,addressNumber:number,maxPers:number, date:string, description:string){
     let tmpEvent : eventTab = {organizationName:organizationName,eventName:eventName, email:email,city:city,address:address, addressNumber:addressNumber, maxParticipants:maxPers, date:date,description:description}
-    this.client.post<eventTab>(this.url + "event",tmpEvent).subscribe()
+    this.client.post<eventTab>(this.urlEvent + "event",tmpEvent).subscribe()
   }
 
   displayEvent(eventId : number):Observable<any>{
     return this.client.get<any>(this.urlEvent + "event/" + eventId )
+  }
+
+  async checkEventByCoopId(){
+    let tmpId = localStorage.getItem("CoopIdConnected")
+    if(tmpId !=null)
+      return localStorage.getItem("CoopIdConnected")
+    else
+      return ""
+  }
+
+  async getCoopName(id:any){
+    return this.client.get(this.url + "coop/" + id)
+  }
+
+  getEventByCoop(name : string){
+    return this.client.get<eventTab[]>(this.urlEvent + "event").pipe(
+      map(event => event.filter(event => event.organizationName == name))
+    )
+    
   }
 }

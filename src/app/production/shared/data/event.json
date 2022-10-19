@@ -83,6 +83,30 @@
       "date": "2022-11-25T18:12",
       "description": "<p>deziuhuiez</p>",
       "id": 7
+    },
+    {
+      "organizationName": "admin",
+      "eventName": "test",
+      "email": "test",
+      "city": "test",
+      "address": "test",
+      "addressNumber": 2,
+      "maxParticipants": 98,
+      "date": "2022-10-29T20:05",
+      "description": "<p>test</p>",
+      "id": 8
+    },
+    {
+      "organizationName": "admin",
+      "eventName": "test2",
+      "email": "test2",
+      "city": "test2t",
+      "address": "test2t",
+      "addressNumber": 55,
+      "maxParticipants": 55,
+      "date": "2022-10-29T21:09",
+      "description": "<p>test2</p>",
+      "id": 9
     }
   ]
 }
