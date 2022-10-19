@@ -107,6 +107,18 @@
       "date": "2022-10-29T21:09",
       "description": "<p>test2</p>",
       "id": 9
+    },
+    {
+      "organizationName": "admin",
+      "eventName": "test",
+      "email": "a",
+      "city": "de\"fzafkjioj",
+      "address": "oipfreipo",
+      "addressNumber": 66,
+      "maxParticipants": 66,
+      "date": "2022-10-21T16:53",
+      "description": "",
+      "id": 10
     }
   ]
 }

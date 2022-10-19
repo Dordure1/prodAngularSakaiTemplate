@@ -31,9 +31,7 @@ async displayEvent() {
      await this.eventServe.getCoopName(res)
 
      .then(async (coop)=>{
-         coop.forEach( (item:any)=>{
-          console.log(item.organisationName);
-          
+         coop.forEach( (item:any)=>{          
              this.eventServe.getEventByCoop(item.organisationName).subscribe((elem:eventTab[])=>{
                 if(elem.length>=1){
                     elem.forEach(element => {
@@ -42,13 +40,9 @@ async displayEvent() {
                 }
              })
         }
-
-        );
-        
+        ); 
      }
-
-     )
-    
+     )  
     })
 }
 async manageEvent(eventId:number){
