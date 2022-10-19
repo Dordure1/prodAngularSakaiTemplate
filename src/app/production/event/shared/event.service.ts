@@ -53,7 +53,7 @@ export class EventService {
   async getCoopName(id:any){
     return this.client.get(this.url + "coop/" + id)
   }
-
+  
   getEventByCoop(name : string){
     return this.client.get<eventTab[]>(this.urlEvent + "event").pipe(
       map(event => event.filter(event => event.organizationName == name))

@@ -53,7 +53,7 @@ import { CoopeventmanagerComponent } from './coopeventmanager/coopeventmanager.c
     CardModule,
     DialogModule,
     ConfirmDialogModule,
-
+    CommonModule,
 
   ]
 })
