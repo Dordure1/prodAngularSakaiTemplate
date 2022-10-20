@@ -1,0 +1,9 @@
+{
+    "userEvent" : [
+        {
+            "id" : 1,
+            "idUser": 1,
+            "idEvent":1
+        }
+    ]
+}

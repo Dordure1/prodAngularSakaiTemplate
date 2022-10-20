@@ -5,16 +5,14 @@
                     <ng-template pTemplate="header">
                         <img alt="Card" style=" width: 80%; border-radius: 12px; display: block; margin-left: auto; margin-right: auto; width: 50%; position: relative;" src="assets/production/img/coopimg.png">
                     </ng-template>
-                    <p> <b>Description : </b>
-                        <span contentEditable="true" (input)="updateDesc(inputDesc.innerText)" #inputDesc >
+                    <!-- <p> <b>Description : </b>
+                        <span contentEditable="true" (input)="updateDesc(inputDesc)" #inputDesc >
                             {{description}} 
                         </span>
-                    </p>  
+                    </p>   -->
                         
                     <p><b>Location :</b> 
-                        <span contentEditable="true" (input)="updateCity(inputCity.innerText)" #inputCity >
-                            {{city}} 
-                        </span>
+                        <input [value] ="city" contentEditable="true" (input)="updateCity(inputCity.value)" #inputCity >
                     </p>
                     <p>Date : {{date}} </p>
                     <ng-template pTemplate="footer">
