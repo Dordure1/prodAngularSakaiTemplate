@@ -8,8 +8,9 @@
                     <p>{{description}} </p>
                     <p>Location : {{city}} </p>
                     <p>Date : {{date}} </p>
-                    <ng-template pTemplate="footer">
-                        <p-button (click)="registerToEvent(id)" label="Register to event" icon="pi pi-check"></p-button>
+                    <ng-template pTemplate="footer" >
+                        <p-button *ngIf="!checkEventReg.includes(id)" (click)="registerToEvent(id)" label="Register to event" icon="pi pi-check"></p-button>
+                        <p-button *ngIf="checkEventReg.includes(id)" (click)="cancelRegistration(id)" label="Cancel Registration" icon="pi pi-check"></p-button>
                     </ng-template>
                 </p-card>
             </p-dialog>

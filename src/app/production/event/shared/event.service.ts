@@ -71,4 +71,18 @@ export class EventService {
     let tmp : userEvent = {idUser : parseInt(idUser) , idEvent : idEvent}
     this.client.post<userEvent>(this.urlUserEvent + "userEvent" , tmp).subscribe()
   }
+
+
+  checkUserEvent(){
+    return this.client.get(this.urlUserEvent + "userEvent")
+  }
+
+  cancelRegistration(idEvent:number){
+    return this.client.get(this.urlUserEvent + "userEvent")
+    }
+
+    cancelEventUser(eventUserId : any){
+     return this.client.delete(this.urlUserEvent + 'userEvent/' + eventUserId ).subscribe()
+    }
+
 }

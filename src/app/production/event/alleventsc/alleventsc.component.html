@@ -69,6 +69,7 @@
 				</ng-template>
 				<ng-template pTemplate="body" let-eventList>
 					<tr >
+						<!-- {{eventList.id}} -->
 						<td style="min-width: 12rem;">
 							{{eventList.eventName}}
 						</td>
@@ -84,8 +85,12 @@
 						<td style="min-width: 12rem;">
 							{{eventList.maxParticipants}}
 						</td>
-						<td style="min-width: 12rem;">
+
+						<td  *ngIf="!checkEventReg.includes(eventList.id)" style="min-width: 12rem;">
 							<button (click)="checkEvent(eventList.id)" pButton label="check this event" class="p-button-outlined mb-2" icon="pi pi-search-plus"></button>
+						</td>
+						<td  *ngIf="checkEventReg.includes(eventList.id)" style="min-width: 12rem;">
+							<button (click)="checkEvent(eventList.id)" pButton label="Cancel event" class="p-button-danger mb-2" icon="pi pi-search-plus"></button>
 						</td>
 					</tr>
 				</ng-template>

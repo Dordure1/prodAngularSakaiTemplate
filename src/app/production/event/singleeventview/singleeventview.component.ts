@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { userEvent } from '../../shared/class/eventUser';
 import { EventService } from '../shared/event.service';
 
 @Component({
@@ -10,6 +11,10 @@ import { EventService } from '../shared/event.service';
 export class SingleeventviewComponent implements OnInit {
   display :boolean = true
 
+  userEventTable : userEvent [] = []
+  checkEventReg: number [] = [] 
+
+  eventUserId! : any 
 
   // name:string =""
   // description : string = ""
@@ -35,6 +40,7 @@ export class SingleeventviewComponent implements OnInit {
     // }) 
 
     // console.log(name);
+    this.checkUserEvent()
     
   }
 
@@ -50,11 +56,50 @@ export class SingleeventviewComponent implements OnInit {
   //   )
 
   // }
-
   registerToEvent(idEvent : any){
     let idUser = localStorage.getItem("idUserConnected")
     this.eventServe.registerToEvent(idUser, idEvent)
     window.location.reload()
+  }
+
+  checkUserEvent(){
+    let idUser : any =  localStorage.getItem("idUserConnected")
+    let tmp: Observable<any> = this.eventServe.checkUserEvent()
+    tmp.forEach(res => {
+      
+      res.forEach((event : any)=>{
+        if(event.idUser == idUser)
+        {
+         
+          let eventId: any = event.idEvent
+          this.checkEventReg.push(eventId);
+          this.userEventTable.push({idUser : idUser,idEvent : eventId })          
+        }  
+      });
+      console.log(this.checkEventReg);  
+    })
+  }
+
+  cancelRegistration(idEvent:number){
+    let idUser : any =  localStorage.getItem("idUserConnected")
+    let tmp : Observable <any> = this.eventServe.cancelRegistration(idEvent)
+    tmp.forEach(res=>{
+        res.forEach((event : any)=>{
+          if(event.idEvent == idEvent && event.idUser == idUser){
+            console.log(event.id , "event id ");
+            
+            this.eventUserId = event.id
+            this.cancelEventUser(this.eventUserId)
+            window.location.reload()
+          }
+        })
+      })
+  }
+
+  cancelEventUser(eventUserId: any){
+    console.log(eventUserId , "usereventid");
+    
+    this.eventServe.cancelEventUser(eventUserId)
   }
 
 }

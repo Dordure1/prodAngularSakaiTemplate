@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Customer } from 'src/app/demo/api/customer';
 import { eventTab } from '../../shared/class/event';
+import { userEvent } from '../../shared/class/eventUser';
 import { EventService } from '../shared/event.service';
 
 @Component({
@@ -9,6 +11,11 @@ import { EventService } from '../shared/event.service';
   templateUrl: './alleventsc.component.html'
 })
 export class AlleventscComponent implements OnInit {
+
+  userEventTable : userEvent [] = []
+  checkEventReg: number [] = [] 
+  check : boolean = false
+
 
   display : boolean = false
 
@@ -29,6 +36,7 @@ export class AlleventscComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllEvent()
+    this.checkUserEvent()
   }
 
 
@@ -64,7 +72,30 @@ export class AlleventscComponent implements OnInit {
 
       })
     })
+  }
+
+  checkUserEvent(){
+    let idUser : any =  localStorage.getItem("idUserConnected")
+    let tmp: Observable<any> = this.eventServe.checkUserEvent()
+    tmp.forEach(res => {
+      
+      res.forEach((event : any)=>{
+        if(event.idUser == idUser)
+        {
+         
+          let eventId: any = event.idEvent
+          this.checkEventReg.push(eventId);
+          this.userEventTable.push({idUser : idUser,idEvent : eventId })          
+        }  
+      });
+      console.log(this.checkEventReg);
+      
+    })
     
-    }
+    
+  }
+
+
+
 }
 

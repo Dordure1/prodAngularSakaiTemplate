@@ -1,14 +1,3 @@
 {
-  "userEvent": [
-    {
-      "id": 1,
-      "idUser": 1,
-      "idEvent": 1
-    },
-    {
-      "idUser": 1,
-      "idEvent": 4,
-      "id": 2
-    }
-  ]
+  "userEvent": []
 }
