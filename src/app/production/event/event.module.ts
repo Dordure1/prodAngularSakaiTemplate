@@ -23,6 +23,8 @@ import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CoopeventmanagerComponent } from './coopeventmanager/coopeventmanager.component';
+import { SignleeventmanagerComponent } from './signleeventmanager/signleeventmanager.component';
+import { UserregistredeventComponent } from './userregistredevent/userregistredevent.component';
 
 
 
@@ -31,7 +33,9 @@ import { CoopeventmanagerComponent } from './coopeventmanager/coopeventmanager.c
     EventcreationcComponent,
     AlleventscComponent,
     SingleeventviewComponent,
-    CoopeventmanagerComponent
+    CoopeventmanagerComponent,
+    SignleeventmanagerComponent,
+    UserregistredeventComponent
   ],
   imports: [
     CommonModule,

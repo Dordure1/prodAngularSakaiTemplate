@@ -60,4 +60,8 @@ export class EventService {
     )
     
   }
+
+  modifyEvent(eventModif : any [], id : number){
+    return this.client.patch(this.urlEvent + "event/" +id, {"description" : eventModif[0], "city" : eventModif[1], "date" : eventModif[2]})
+  }
 }

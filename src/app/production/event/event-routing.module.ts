@@ -4,12 +4,14 @@ import { AlleventscComponent } from './alleventsc/alleventsc.component';
 import { CoopeventmanagerComponent } from './coopeventmanager/coopeventmanager.component';
 import { EventcreationcComponent } from './eventcreationc/eventcreationc.component';
 import { SingleeventviewComponent } from './singleeventview/singleeventview.component';
+import { UserregistredeventComponent } from './userregistredevent/userregistredevent.component';
 
 const routes: Routes = [
   {path:"", component:AlleventscComponent},
   {path:"event/:eventId", component:SingleeventviewComponent},
   {path : "create", component:EventcreationcComponent},
   {path : "myevent", component:CoopeventmanagerComponent},
+  {path : "userevent", component:UserregistredeventComponent},
 ];
 
 @NgModule({

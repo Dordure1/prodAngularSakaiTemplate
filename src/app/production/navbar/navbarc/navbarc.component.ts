@@ -26,6 +26,7 @@ export class NavbarcComponent implements OnInit {
       {label: 'myEvent', icon: 'pi pi-fw pi-calendar', command:() => this.navToMyEvent()},
       {label: 'Check Events', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEvents()},
       {label: 'Create an event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEventsCreation()},
+      {label: 'Check User Event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToUserEvent()},
     ];
    }
   ngOnInit(): void {
@@ -53,9 +54,15 @@ export class NavbarcComponent implements OnInit {
   navToEvents(){
     this.router.navigate(['./event'])
   }
+  
   navToEventsCreation(){
     this.router.navigate(['./event/create'])
   }
+
+  navToUserEvent(){
+    this.router.navigate(['event/userevent'])
+  }
+
   logOut(){
     this.authServe.logOut()
     this.authUserServe.logOut()
