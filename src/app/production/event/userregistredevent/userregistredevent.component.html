@@ -84,8 +84,11 @@
 						<td style="min-width: 12rem;">
 							{{eventList.maxParticipants}}
 						</td>
-						<td style="min-width: 12rem;">
-							<button  pButton label="check this event" class="p-button-outlined mb-2" icon="pi pi-search-plus"></button>
+						<td  *ngIf="!checkEventReg.includes(eventList.id)" style="min-width: 12rem;">
+							<button (click)="checkEvent(eventList.id)" pButton label="check this event" class="p-button-outlined mb-2" icon="pi pi-search-plus"></button>
+						</td>
+						<td  *ngIf="checkEventReg.includes(eventList.id)" style="min-width: 12rem;">
+							<button (click)="checkEvent(eventList.id)" pButton label="Cancel event" class="p-button-danger mb-2" icon="pi pi-search-plus"></button>
 						</td>
 					</tr>
 				</ng-template>
@@ -96,6 +99,16 @@
 				</ng-template>
     		</p-table>
 		</div>
+
+		<app-singleeventview
+		*ngFor = "let event of allEventWithId"
+		[id] = event.id
+		[name] =event.name
+		[description] = event.description
+		[city]="event.city"
+		[date]="event.date"
+		>
+	</app-singleeventview>
 	</div>
 </div>
 </div>

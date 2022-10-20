@@ -60,7 +60,6 @@ export class EventService {
     return this.client.get<eventTab[]>(this.urlEvent + "event").pipe(
       map(event => event.filter(event => event.organizationName == name))
     )
-    
   }
 
   modifyEvent(eventModif : any [], id : number){
@@ -85,4 +84,13 @@ export class EventService {
      return this.client.delete(this.urlUserEvent + 'userEvent/' + eventUserId ).subscribe()
     }
 
+
+    checkEventUser(idUser : number){
+      return this.client.get(this.urlUserEvent + "userEvent")  
+    }
+
+
+    getEventByUserId(){
+      return this.client.get(this.urlEvent + "event")
+    }
 }

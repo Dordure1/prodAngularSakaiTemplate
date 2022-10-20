@@ -6,3 +6,6 @@ json-server --watch src/app/production/shared/data/event.json --port 3001
 
 load db user
 json-server --watch src/app/production/shared/data/user.json --port 3002
+
+load db userEvent
+json-server --watch src/app/production/shared/data/userEvent.json --port 3003
