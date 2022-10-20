@@ -9,12 +9,9 @@
                     <p>Location : {{city}} </p>
                     <p>Date : {{date}} </p>
                     <ng-template pTemplate="footer">
-                        <p-button (click)="registerToEvent()" label="Register to event" icon="pi pi-check"></p-button>
+                        <p-button (click)="registerToEvent(id)" label="Register to event" icon="pi pi-check"></p-button>
                     </ng-template>
                 </p-card>
-                <ng-template pTemplate="footer">
-                        <button pButton icon="pi pi-check" (click)="display=false" label="Ok" class="p-button-outlined"></button>
-                </ng-template>
             </p-dialog>
     </div>
 </div>

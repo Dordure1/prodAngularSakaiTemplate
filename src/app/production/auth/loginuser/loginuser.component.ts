@@ -24,8 +24,9 @@ export class LoginuserComponent implements OnInit {
     checkUser(){
       this.loginUserServe.checklogin(this.userName,this.password).subscribe((user:any)=>{
         if(user.length>=1){
+        let idUser = user[0].id
           
-          this.logIn()
+          this.logIn(idUser)
         }
         else{
           return console.log("error")
@@ -34,9 +35,9 @@ export class LoginuserComponent implements OnInit {
       )
     }
 
-      logIn(){
+      logIn(idUser : number){
         this.router.navigate([''])
-        this.loginUserServe.login(this.userName, this.password)
+        this.loginUserServe.login(this.userName, this.password, idUser)
       }
     
 }

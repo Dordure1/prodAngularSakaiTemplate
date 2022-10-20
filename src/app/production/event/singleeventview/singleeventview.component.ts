@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { EventService } from '../shared/event.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SingleeventviewComponent implements OnInit {
   // address : string = ""
   // date : string = ""
   // city : string = ""
-
+  @Input() id !: number 
   @Input () name:string =""
   @Input () description : string = ""
   @Input () address : string = ""
@@ -50,6 +51,10 @@ export class SingleeventviewComponent implements OnInit {
 
   // }
 
-  registerToEvent(){
+  registerToEvent(idEvent : any){
+    let idUser = localStorage.getItem("idUserConnected")
+    this.eventServe.registerToEvent(idUser, idEvent)
+    window.location.reload()
   }
+
 }

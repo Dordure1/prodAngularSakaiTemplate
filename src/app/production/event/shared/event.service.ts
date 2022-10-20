@@ -4,6 +4,7 @@ import { filterEventStoreDefs } from '@fullcalendar/angular';
 import { stringify } from 'querystring';
 import { map, Observable,filter, pipe } from 'rxjs';
 import { eventTab } from '../../shared/class/event';
+import { userEvent } from '../../shared/class/eventUser';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { eventTab } from '../../shared/class/event';
 export class EventService {
 
   url: string = "http://localhost:3000/"
+  urlUserEvent: string = "http://localhost:3003/"
   coopEvent : any [] = []
   organizationName : string=""
   eventName :string = ""
@@ -63,5 +65,10 @@ export class EventService {
 
   modifyEvent(eventModif : any [], id : number){
     return this.client.patch(this.urlEvent + "event/" +id, {"description" : eventModif[0], "city" : eventModif[1], "date" : eventModif[2]})
+  }
+
+  registerToEvent(idUser :any, idEvent:any){
+    let tmp : userEvent = {idUser : parseInt(idUser) , idEvent : idEvent}
+    this.client.post<userEvent>(this.urlUserEvent + "userEvent" , tmp).subscribe()
   }
 }
