@@ -60,6 +60,7 @@ export class AuthServiceUserService {
     this.isConnectUser = true
     localStorage.setItem("isConnectUser","true")
     localStorage.setItem("idUserConnected",`${idUser}`)
+
     this.emit_isConnect()
   }
 

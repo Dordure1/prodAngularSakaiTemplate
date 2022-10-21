@@ -78,11 +78,18 @@ isConnectUser : boolean = false
     ) { 
   }
   ngOnInit(): void {
+    let displayed = localStorage.getItem("displayedToast")
     this.authServe.$isConnect.subscribe((isConnect : boolean)=>{
         this.isConnectCoop = isConnect
       
         if(this.isConnectCoop ==true){
-          this.displayToast()
+            if (displayed=="true"){
+
+            }
+            else{
+                localStorage.setItem("displayedToast", "true")
+                this.displayToast()
+            }
         }
     
     })
@@ -90,7 +97,14 @@ isConnectUser : boolean = false
     this.AuthUserServe.$isConnectUser.subscribe((isConnect : boolean)=>{
         this.isConnectUser = isConnect
         if(this.isConnectUser==true){
-            this.displayToast()
+            if(displayed == "true"){
+
+            }
+            else
+            {
+                localStorage.setItem("displayedToast", "true")
+                this.displayToast()
+            }
         }
     })
 }
