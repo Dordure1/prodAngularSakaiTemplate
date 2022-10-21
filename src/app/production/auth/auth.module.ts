@@ -13,6 +13,7 @@ import {SplitterModule} from 'primeng/splitter';
 import {CardModule} from 'primeng/card';
 import { LoginuserComponent } from './loginuser/loginuser.component';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -33,7 +34,8 @@ import { RegisteruserComponent } from './registeruser/registeruser.component';
     ButtonModule,
     ReactiveFormsModule,
     SplitterModule,
-    CardModule
+    CardModule,
+    ToastModule,
   ]
 })
 export class AuthModule { }

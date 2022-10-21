@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { stringify } from 'querystring';
 import {BehaviorSubject, filter, map, Observable} from 'rxjs'
+import { HomecComponent } from 'src/app/production/home/homec/homec.component';
 import { newCoop } from '../../class/newCoop';
 import { user } from '../../class/users';
 
@@ -43,6 +44,7 @@ export class AuthServicesService {
       return this.isConnect
     }
     else {
+      this.isConnect = false
       return false
     }
   }
