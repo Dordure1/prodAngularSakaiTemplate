@@ -11,14 +11,22 @@
                         </span>
                     </p>   -->
                         
-                    <p><b>Location :</b> 
-                        <input [value] ="city" contentEditable="true" (input)="updateCity(inputCity.value)" #inputCity >
+                    <p><b>Location : <span *ngIf="!editable"> {{city}}</span></b>
+                        <input *ngIf="editable" input [value] ="city" (input)="updateCity(inputCity.value)" #inputCity >
                     </p>
-                    <p>Date : {{date}} </p>
+                    <p><b>Address: <span *ngIf="!editable">{{address}}</span></b> 
+                        <input *ngIf="editable"  [value] ="address" contentEditable="false" (input)="updateAddress(inputAddress.value)" #inputAddress >
+                    </p>
+                    <p><b>Date : <span *ngIf="!editable">{{date|date:'dd/MM/YYYY'}}</span></b> 
+                        <input *ngIf="editable" [value] ="date|date:'dd/MM/YYYY'" contentEditable="flase" (input)="updateDate(inputDate.value)" #inputDate >
+                    </p>
                     <ng-template pTemplate="footer">
-                        <p-button (click)="modifyEvent()" label="Modify My Event" icon="pi pi-check"></p-button>
+                        <p-button (click)="enableModify()" label="Modify My Event" icon="pi pi-check"></p-button>
                     </ng-template>
                 </p-card>
+                <ng-template pTemplate="footer">
+                    <p-button (click)="modifyEvent()" label="Confirm Modification" icon="pi pi-check"></p-button>
+                </ng-template>
             </p-dialog>
     </div>
 </div>

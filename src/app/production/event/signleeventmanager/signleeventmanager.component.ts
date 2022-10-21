@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { eventTab } from '../../shared/class/event';
 import { EventService } from '../shared/event.service';
@@ -18,6 +18,13 @@ export class SignleeventmanagerComponent implements OnInit {
   @Input () date : string = ""
   @Input () city : string = ""
   
+ 
+  @ViewChild('input1') input1 : any
+  @ViewChild('input2') input2 : any
+  @ViewChild('input3') input3 : any
+
+  editable : boolean = false
+
   constructor(private eventServe : EventService, private router : Router) { }
 
   ngOnInit(): void {
@@ -36,6 +43,17 @@ export class SignleeventmanagerComponent implements OnInit {
 
   updateCity(updatedCity : string){
       this.city  = updatedCity
+  }
+
+  updateAddress(updatedAddress : string){
+      this.address  = updatedAddress
+  }
+  updateDate(updatedDate : string){
+      this.date  = updatedDate
+  }
+
+  enableModify(){
+    this.editable = true
   }
 
 }

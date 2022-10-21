@@ -93,4 +93,12 @@ export class EventService {
     getEventByUserId(){
       return this.client.get(this.urlEvent + "event")
     }
+
+    getOrganizationName(){
+      let id = localStorage.getItem("CoopIdConnected")
+      return this.client.get<any[]>(this.url +"coop").pipe(
+        map(res => res.filter(event => event.id == id)
+        )
+      )
+    }
 }

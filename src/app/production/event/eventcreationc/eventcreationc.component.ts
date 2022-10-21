@@ -20,6 +20,7 @@ import { EventService } from '../shared/event.service';
         }
     `]
 })
+
 export class EventcreationcComponent implements OnInit {
   ///event data
   organizationName : string=""
@@ -40,9 +41,19 @@ export class EventcreationcComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getOrganizationName()
   }
   createEvent(){
      this.eventServe.createEvent(this.organizationName,this.eventName,this.email,this.city,this.address,this.addressNumber,this.maxPers, this.date, this.description)
-     this.router.navigate(['/event'])
+     this.router.navigate(['/event/myevent'])
+    }
+
+    getOrganizationName(){
+        this.eventServe.getOrganizationName().forEach((x: any)=>{
+            x.forEach((res:any)=> {
+                this.organizationName = res.organisationName    
+
+            })
+        })
     }
 }
