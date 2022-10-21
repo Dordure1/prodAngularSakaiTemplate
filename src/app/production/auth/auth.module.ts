@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './loginCoop/login.component';
-import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './registerCoop/register.component';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,7 +19,6 @@ import { RegisteruserComponent } from './registeruser/registeruser.component';
 @NgModule({
   declarations: [
     LoginComponent,
-    LogoutComponent,
     RegisterComponent,
     YouarecComponent,
     LoginuserComponent,

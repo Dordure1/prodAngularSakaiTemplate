@@ -19,25 +19,53 @@ export class NavbarcComponent implements OnInit {
     private authServe : AuthServicesService,
     private authUserServe : AuthServiceUserService
     ) {
-    
-    
+     
       this.items = [
       {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
-      {label: 'myEvent', icon: 'pi pi-fw pi-calendar', command:() => this.navToMyEvent()},
-      {label: 'Check Events', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEvents()},
-      {label: 'Create an event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEventsCreation()},
-      {label: 'Check User Event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToUserEvent()},
     ];
-   }
+  }
   ngOnInit(): void {
     this.authServe.$isConnect.subscribe((isConnect:boolean)=>{
       this.isConnect = isConnect
+      this.createNavBar()
     })
     this.authUserServe.$isConnectUser.subscribe((isConnectUser:boolean)=>{
       this.isConnectUser = isConnectUser
+      this.createNavBar()
     })
+    
+    
+  }
+  
+  
+  createNavBar(){
+    if(this.isConnect)
+    {
+      this.items = [
+      {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
+      {label: 'myEvent', icon: 'pi pi-fw pi-calendar', command:() => this.navToMyEvent()},
+      {label: 'Create an event', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEventsCreation()},
+      ];
+    }
+    else if(this.isConnectUser)
+    {
+      this.items = [
+        {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
+        {label: 'Check Events', icon: 'pi pi-fw pi-pencil', command:()=>this.navToEvents()},
+        {label: 'Check User Event', icon: 'pi pi-fw pi-calendar', command:()=>this.navToUserEvent()},
+      ];
+    }
+    else {
+      this.items = [ 
+        {label: 'Home', icon: 'pi pi-fw pi-home', command:() => this.navToHome()},
+
+      ]
+    }
+    
 
   }
+
+
 
   navToHome(){
     this.router.navigate([''])
@@ -66,5 +94,6 @@ export class NavbarcComponent implements OnInit {
   logOut(){
     this.authServe.logOut()
     this.authUserServe.logOut()
+    this.router.navigate([''])
   }
 }
