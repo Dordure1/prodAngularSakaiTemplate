@@ -114,7 +114,10 @@ isConnectUser : boolean = false
     setTimeout(() => {
         this.messageService.add({key:"myKey1",severity:'success', summary: 'Success', detail: 'You are connected'})
     }, 200);
-    
+  }
+
+  getStarted(){
+    this.router.navigate(['auth'])
   }
 
 }
