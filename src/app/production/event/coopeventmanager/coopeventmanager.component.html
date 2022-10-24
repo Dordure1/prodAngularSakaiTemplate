@@ -78,13 +78,13 @@
 							{{eventList.organizationName}}
 						</td>
 						<td style="min-width: 12rem;">
-							{{eventList.eventType}}
+							{{eventList.type}}
 						</td>
 						<td style="min-width: 12rem;">
 							{{eventList.city}}
 						</td>
 						<td style="min-width: 12rem;">
-							{{eventList.date}}
+							{{eventList.date|date : "dd/mm/yyyy hh:mm a"}}
 						</td>
 						<td style="min-width: 12rem;">
 							{{eventList.maxParticipants}}

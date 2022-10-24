@@ -39,7 +39,8 @@ export class EventcreationcComponent implements OnInit {
   dropdownItems = [
     { name: 'alimentary', code: 'Option 1' },
     { name: 'family activity', code: 'Option 2' },
-    { name: 'Other', code: 'Option 3' }
+    { name: 'festival', code: 'Option 3' },
+    { name: 'Other', code: 'Option 4' },
 ];
 
 
@@ -53,6 +54,7 @@ export class EventcreationcComponent implements OnInit {
     this.getOrganizationName()
   }
   createEvent(){
+    this.description = this.description.replace( /(<([^>]+)>)/ig, '');
      this.eventServe.createEvent(this.organizationName,this.eventName,this.email,this.city,this.address,this.addressNumber,this.maxPers, this.date, this.description, this.eventType)
      this.router.navigate(['/event/myevent'])
     }

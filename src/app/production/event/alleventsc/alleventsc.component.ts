@@ -37,6 +37,8 @@ export class AlleventscComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEvent()
     this.checkUserEvent()
+    
+    
   }
 
 
@@ -48,11 +50,10 @@ export class AlleventscComponent implements OnInit {
     await this.eventServe.getAllEvent().then((allEvents)=>{      
       allEvents.forEach((element:any)=>{
           element.forEach((res : eventTab)=>{
-            this.eventList.push(res)
+            this.eventList.push(res)           
           })
       })      
     }
-    
     )
   }
 

@@ -10,13 +10,22 @@
       "addressNumber": ""
     },
     {
-      "userName": "hiudzh@jdeoji",
-      "password": "registerForm",
-      "organisationName": "poezpojdpoe",
-      "city": "jcjoz",
-      "address": "zed",
+      "userName": "belgrains@belgrains.be",
+      "password": "belgrains",
+      "organisationName": "belgrains",
+      "city": "Liège",
+      "address": "rue saint antoine",
       "addressNumber": 12,
       "id": 2
+    },
+    {
+      "userName": "myfestival@myfestival.be",
+      "password": "myfestival",
+      "organisationName": "myfestival",
+      "city": "Namur",
+      "address": "rue de Namur",
+      "addressNumber": 204,
+      "id": 3
     }
   ]
 }
