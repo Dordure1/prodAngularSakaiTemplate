@@ -30,7 +30,7 @@ export class EventcreationcComponent implements OnInit {
   address : string = ""
   addressNumber:number =0
   maxPers:number = 0
-  date : string = ""
+  date! : Date
   description : string =""
 
 

@@ -13,7 +13,7 @@ export class CoopeventmanagerComponent implements OnInit {
   eventList: eventTab [] = [];
 
   allEventWithId :
-  {id:number, name : string , description : string , address : string, date : string , city : string} [] = []
+  {id:number, name : string , description : string , address : string, date : Date , city : string} [] = []
   constructor(private eventServe : EventService) { }
 
   ngOnInit(): void {

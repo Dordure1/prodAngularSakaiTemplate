@@ -15,7 +15,7 @@ export class SignleeventmanagerComponent implements OnInit {
   @Input () name:string =""
   @Input () description : string = ""
   @Input () address : string = ""
-  @Input () date : string = ""
+  @Input () date! : Date 
   @Input () city : string = ""
   
  
@@ -48,7 +48,7 @@ export class SignleeventmanagerComponent implements OnInit {
   updateAddress(updatedAddress : string){
       this.address  = updatedAddress
   }
-  updateDate(updatedDate : string){
+  updateDate(updatedDate : any){
       this.date  = updatedDate
   }
 

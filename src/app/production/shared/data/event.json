@@ -227,6 +227,18 @@
       "date": "",
       "description": "",
       "id": 19
+    },
+    {
+      "organizationName": "admin",
+      "eventName": "",
+      "email": "",
+      "city": "",
+      "address": "",
+      "addressNumber": 0,
+      "maxParticipants": 0,
+      "date": "2023-01-25",
+      "description": "",
+      "id": 20
     }
   ]
 }

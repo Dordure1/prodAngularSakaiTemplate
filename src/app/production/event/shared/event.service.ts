@@ -21,7 +21,7 @@ export class EventService {
   address : string = ""
   addressNumber:number =0
   maxPers:number = 0
-  date : string = ""
+  date! : Date 
   description : string =""
 
 
@@ -35,7 +35,7 @@ export class EventService {
     return this.client.get(this.urlEvent + "event")
   }
 
-  createEvent(organizationName:string,eventName:string,email:string,city:string,address:string,addressNumber:number,maxPers:number, date:string, description:string){
+  createEvent(organizationName:string,eventName:string,email:string,city:string,address:string,addressNumber:number,maxPers:number, date:Date, description:string){
     let tmpEvent : eventTab = {organizationName:organizationName,eventName:eventName, email:email,city:city,address:address, addressNumber:addressNumber, maxParticipants:maxPers, date:date,description:description}
     this.client.post<eventTab>(this.urlEvent + "event",tmpEvent).subscribe()
   }

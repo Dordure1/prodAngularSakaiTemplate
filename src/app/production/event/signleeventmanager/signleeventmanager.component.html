@@ -18,7 +18,7 @@
                         <input *ngIf="editable"  [value] ="address" contentEditable="false" (input)="updateAddress(inputAddress.value)" #inputAddress >
                     </p>
                     <p><b>Date : <span *ngIf="!editable">{{date|date:'dd/MM/YYYY'}}</span></b> 
-                        <input *ngIf="editable" [value] ="date|date:'dd/MM/YYYY'" contentEditable="flase" (input)="updateDate(inputDate.value)" #inputDate >
+                        <input type="date" *ngIf="editable" [value] ="date" contentEditable="flase" (input)="updateDate(inputDate.value)" #inputDate >
                     </p>
                     <ng-template pTemplate="footer">
                         <p-button (click)="enableModify()" label="Modify My Event" icon="pi pi-check"></p-button>
