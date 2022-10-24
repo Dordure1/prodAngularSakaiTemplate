@@ -22,6 +22,8 @@ import { EventService } from '../shared/event.service';
 })
 
 export class EventcreationcComponent implements OnInit {
+
+    selectedState: any;
   ///event data
   organizationName : string=""
   eventName :string = ""
@@ -32,6 +34,13 @@ export class EventcreationcComponent implements OnInit {
   maxPers:number = 0
   date! : Date
   description : string =""
+  eventType : string =""
+
+  dropdownItems = [
+    { name: 'alimentary', code: 'Option 1' },
+    { name: 'family activity', code: 'Option 2' },
+    { name: 'Other', code: 'Option 3' }
+];
 
 
 
@@ -44,7 +53,7 @@ export class EventcreationcComponent implements OnInit {
     this.getOrganizationName()
   }
   createEvent(){
-     this.eventServe.createEvent(this.organizationName,this.eventName,this.email,this.city,this.address,this.addressNumber,this.maxPers, this.date, this.description)
+     this.eventServe.createEvent(this.organizationName,this.eventName,this.email,this.city,this.address,this.addressNumber,this.maxPers, this.date, this.description, this.eventType)
      this.router.navigate(['/event/myevent'])
     }
 

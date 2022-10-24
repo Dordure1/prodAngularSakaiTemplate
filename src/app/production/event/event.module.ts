@@ -58,6 +58,9 @@ import { UserregistredeventComponent } from './userregistredevent/userregistrede
     DialogModule,
     ConfirmDialogModule,
     CommonModule,
+    DropdownModule,
+    InputTextModule,
+
 
   ]
 })

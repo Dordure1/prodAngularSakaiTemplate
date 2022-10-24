@@ -7,5 +7,6 @@ export interface eventTab {
     addressNumber : number, 
     maxParticipants : number,
     date : Date,
-    description : string
+    description : string,
+    type : string
 }

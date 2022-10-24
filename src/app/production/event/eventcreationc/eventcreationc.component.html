@@ -27,6 +27,15 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
+                            <label for="eventType">Event Type : </label>
+					        <p-dropdown [(ngModel)]="eventType" [options]="dropdownItems" optionLabel="name" [(ngModel)]="selectedState"></p-dropdown>
+                            
+                            <!-- <input [(ngModel)]="eventType" type="text"  [ngModelOptions]="{standalone: true}" class="form-control" id="inputEmail4" placeholder="event type"> -->
+                        </div> 
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                             <label for="inputAddress">Address of event</label>
                             <input [(ngModel)]="address" type="text" [ngModelOptions]="{standalone: true}" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
