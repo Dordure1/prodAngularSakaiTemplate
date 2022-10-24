@@ -30,6 +30,12 @@
 						</th>
 						<th>
 							<div class="flex justify-content-between align-items-center">
+								Event Type
+								<p-columnFilter type="text" field="eventType" display="menu" placeholder="Event Type"></p-columnFilter>
+							</div>
+						</th>
+						<th>
+							<div class="flex justify-content-between align-items-center">
 								city
 								<p-columnFilter type="text" field="city" display="menu" placeholder="Search by country"></p-columnFilter>
 							</div>
@@ -70,6 +76,9 @@
 						</td>
 						<td style="min-width: 12rem;">
 							{{eventList.organizationName}}
+						</td>
+						<td style="min-width: 12rem;">
+							{{eventList.eventType}}
 						</td>
 						<td style="min-width: 12rem;">
 							{{eventList.city}}
