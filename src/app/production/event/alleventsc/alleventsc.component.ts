@@ -30,8 +30,8 @@ export class AlleventscComponent implements OnInit {
 
   constructor( 
     private eventServe : EventService,
-    private router : Router, 
-    private activatedRoute : ActivatedRoute
+    // private router : Router, 
+    // private activatedRoute : ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +47,7 @@ export class AlleventscComponent implements OnInit {
 }
 
   async getAllEvent(){
-    await this.eventServe.getAllEvent().then((allEvents)=>{      
+    await this.eventServe.getAllEvent().subscribe((allEvents: any)=>{      
       allEvents.forEach((element:any)=>{
           element.forEach((res : eventTab)=>{
             this.eventList.push(res)           
@@ -57,10 +57,10 @@ export class AlleventscComponent implements OnInit {
     )
   }
 
- async  checkEvent(eventId:number){
+  async  checkEvent(eventId:number){
     // this.router.navigate([this.router.url,"event",eventId])
     // this.display = true
-    await this.eventServe.getAllEvent().then((allEvents)=>{
+    await this.eventServe.getAllEvent().subscribe((allEvents : any)=>{
       allEvents.forEach((element:any)=>{
         element.forEach((res:any)=>{
           if(res.id === eventId)

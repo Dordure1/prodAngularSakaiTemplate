@@ -43,8 +43,6 @@ export class EventcreationcComponent implements OnInit {
     { name: 'Other', code: 'Option 4' },
 ];
 
-
-
   constructor(
     private eventServe : EventService,
     private router : Router
