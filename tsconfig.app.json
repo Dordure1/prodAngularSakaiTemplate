@@ -3,7 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    /// modif fait ici --> types vide et les deux autres pas écrit
+      "types": [],
+
   },
   "files": [
     "src/main.ts",

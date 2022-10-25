@@ -23,14 +23,13 @@ export class LoginuserComponent implements OnInit {
 
     checkUser(){
       this.loginUserServe.checklogin(this.userName,this.password).subscribe((user:any)=>{
-        if(user.length>=1){
-          
+        if(user.length>=1){       
           this.logIn()
         }
-        else{
-          return console.log("error")
-        }
-      }  
+          else{
+            return console.log("error")
+          }
+        }  
       )
     }
 
