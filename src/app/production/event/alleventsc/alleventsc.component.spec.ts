@@ -176,10 +176,11 @@ import { defer, first } from 'rxjs';
           service = TestBed.inject(EventService);
           httpController = TestBed.inject(HttpTestingController);
         });
-  
+  ///
   
       it('should call get first event and return an array of event', () => {
               
+
               // 1
             service.getAllEvent().pipe(first()).subscribe((res) => {
                   //2
