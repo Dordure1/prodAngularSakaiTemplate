@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import { roundToNearestMinutesWithOptions } from 'date-fns/fp';
+import { MessageService } from 'primeng/api';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { AuthServicesService } from '../../shared/services/coop/auth-services.service';
+import { AuthServiceUserService } from '../../shared/services/user/auth-service-user.service';
 
 @Component({
   selector: 'app-homec',
   templateUrl: './homec.component.html',
+  providers : [MessageService],
   styles: [`
         #hero{
             background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #C3E3FA 100%);
@@ -61,9 +65,59 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 })
 export class HomecComponent implements OnInit {
+isConnectCoop : boolean = false
+isConnectUser : boolean = false
 
-  constructor(public layoutService : LayoutService, public router: Router) { 
+  constructor(
+    public layoutService : LayoutService, 
+    public router: Router, 
+    private authServe : AuthServicesService, 
+    private messageService : MessageService,
+    private AuthUserServe : AuthServiceUserService
+    
+    ) { 
   }
   ngOnInit(): void {
+    let displayed = localStorage.getItem("displayedToast")
+    this.authServe.$isConnect.subscribe((isConnect : boolean)=>{
+        this.isConnectCoop = isConnect
+      
+        if(this.isConnectCoop ==true){
+            if (displayed=="true"){
+
+            }
+            else{
+                localStorage.setItem("displayedToast", "true")
+                this.displayToast()
+            }
+        }
+    
+    })
+
+    this.AuthUserServe.$isConnectUser.subscribe((isConnect : boolean)=>{
+        this.isConnectUser = isConnect
+        if(this.isConnectUser==true){
+            if(displayed == "true"){
+
+            }
+            else
+            {
+                localStorage.setItem("displayedToast", "true")
+                this.displayToast()
+            }
+        }
+    })
+}
+  
+
+  displayToast(){
+    setTimeout(() => {
+        this.messageService.add({key:"myKey1",severity:'success', summary: 'Success', detail: 'You are connected'})
+    }, 200);
   }
+
+  getStarted(){
+    this.router.navigate(['auth'])
+  }
+
 }

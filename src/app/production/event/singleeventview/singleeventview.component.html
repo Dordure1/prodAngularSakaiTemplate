@@ -1,0 +1,18 @@
+<div class="grid">
+    <div class="col-12 lg:col-6">
+            <p-dialog header="Event" [(visible)]="display" [modal]="true" showEffect="fade" [style]="{width: '30vw'}" [breakpoints]="{'960px': '75vw'}">
+                <p-card header="{{name}}" [style]="{width: '360px'}" styleClass="p-card-shadow">
+                    <ng-template pTemplate="header">
+                        <img alt="Card" style=" width: 80%; border-radius: 12px; display: block; margin-left: auto; margin-right: auto; width: 50%; position: relative;" src="assets/production/img/coopimg.png">
+                    </ng-template>
+                    <p>{{description}} </p>
+                    <p>Location : {{city}} </p>
+                    <p>Date : {{date}} </p>
+                    <ng-template pTemplate="footer" >
+                        <p-button *ngIf="!checkEventReg.includes(id)" (click)="registerToEvent(id)" label="Register to event" icon="pi pi-check"></p-button>
+                        <p-button *ngIf="checkEventReg.includes(id)" (click)="cancelRegistration(id)" label="Cancel Registration" icon="pi pi-check"></p-button>
+                    </ng-template>
+                </p-card>
+            </p-dialog>
+    </div>
+</div>

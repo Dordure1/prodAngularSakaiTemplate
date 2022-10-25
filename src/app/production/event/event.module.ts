@@ -17,9 +17,14 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 import {EditorModule} from 'primeng/editor';
-import { Paginator, PaginatorModule } from 'primeng/paginator';
-import { SingleeventviewComponent } from './singleeventview/singleeventview/singleeventview.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { SingleeventviewComponent } from './singleeventview/singleeventview.component';
 import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { CoopeventmanagerComponent } from './coopeventmanager/coopeventmanager.component';
+import { SignleeventmanagerComponent } from './signleeventmanager/signleeventmanager.component';
+import { UserregistredeventComponent } from './userregistredevent/userregistredevent.component';
 
 
 
@@ -27,7 +32,10 @@ import { CardModule } from 'primeng/card';
   declarations: [
     EventcreationcComponent,
     AlleventscComponent,
-    SingleeventviewComponent
+    SingleeventviewComponent,
+    CoopeventmanagerComponent,
+    SignleeventmanagerComponent,
+    UserregistredeventComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +55,12 @@ import { CardModule } from 'primeng/card';
     EditorModule,
     PaginatorModule,
     CardModule,
+    DialogModule,
+    ConfirmDialogModule,
+    CommonModule,
+    DropdownModule,
+    InputTextModule,
+
 
   ]
 })

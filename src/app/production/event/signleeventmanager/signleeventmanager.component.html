@@ -1,0 +1,32 @@
+<div class="grid">
+    <div class="col-12 lg:col-6">
+            <p-dialog header="Event" [(visible)]="display" [modal]="true" showEffect="fade" [style]="{width: '30vw'}" [breakpoints]="{'960px': '75vw'}">
+                <p-card header="{{name}}" [style]="{width: '360px'}" styleClass="p-card-shadow">
+                    <ng-template pTemplate="header">
+                        <img alt="Card" style=" width: 80%; border-radius: 12px; display: block; margin-left: auto; margin-right: auto; width: 50%; position: relative;" src="assets/production/img/coopimg.png">
+                    </ng-template>
+                    <!-- <p> <b>Description : </b>
+                        <span contentEditable="true" (input)="updateDesc(inputDesc)" #inputDesc >
+                            {{description}} 
+                        </span>
+                    </p>   -->
+                        
+                    <p><b>Location : <span *ngIf="!editable"> {{city}}</span></b>
+                        <input *ngIf="editable" input [value] ="city" (input)="updateCity(inputCity.value)" #inputCity >
+                    </p>
+                    <p><b>Address: <span *ngIf="!editable">{{address}}</span></b> 
+                        <input *ngIf="editable"  [value] ="address" contentEditable="false" (input)="updateAddress(inputAddress.value)" #inputAddress >
+                    </p>
+                    <p><b>Date : <span *ngIf="!editable">{{date|date:'dd/MM/YYYY'}}</span></b> 
+                        <input type="date" *ngIf="editable" [value] ="date" contentEditable="flase" (input)="updateDate(inputDate.value)" #inputDate >
+                    </p>
+                    <ng-template pTemplate="footer">
+                        <p-button (click)="enableModify()" label="Modify My Event" icon="pi pi-check"></p-button>
+                    </ng-template>
+                </p-card>
+                <ng-template pTemplate="footer">
+                    <p-button (click)="modifyEvent()" label="Confirm Modification" icon="pi pi-check"></p-button>
+                </ng-template>
+            </p-dialog>
+    </div>
+</div>

@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { MenuItemContent, MenuModule } from 'primeng/menu';
 import { NavbarcComponent } from './production/navbar/navbarc/navbarc.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,7 @@ import { ActivatedRoute, Router } from '@angular/router';
         FormsModule,
         TabMenuModule,
         ButtonModule,
-        CommonModule
+        CommonModule,
 
     ],
     providers: [

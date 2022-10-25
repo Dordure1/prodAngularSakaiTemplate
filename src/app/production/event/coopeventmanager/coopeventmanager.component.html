@@ -4,11 +4,7 @@
 	<div class="col-12">
 		<div class="card">
 			<h5>Filter Menu</h5>
-			<!-- <p-table  #dt1 [value]="eventList" dataKey="id"  styleClass="p-datatable-gridlines"  responsiveLayout="stack" scrollHeight="100%" scrollWidth="100%"
-			 [paginator]="true" [rows]="5"  [rowHover]="true" [rowsPerPageOptions]="[5,10,15,20]"> -->
-			 <p-table #dt1 [value]="eventList" dataKey="id" [rows]="200" [rowHover]="true"
-			 styleClass="p-datatable-gridlines" [paginator]="true" 
-			 responsiveLayout="scroll" [rowsPerPageOptions]="[5,10,15,20]" >
+			<p-table  #dt1 [value]="eventList" dataKey="id"  styleClass="p-datatable-gridlines"  responsiveLayout="stack" scrollHeight="100%" scrollWidth="100%" >
 				<ng-template pTemplate="caption">
 					<div class="flex justify-content-between flex-column sm:flex-row">
 						<button (click)="clear(dt1)" pButton label="Clear" class="p-button-outlined mb-2" icon="pi pi-filter-slash" ></button>
@@ -34,8 +30,8 @@
 						</th>
 						<th>
 							<div class="flex justify-content-between align-items-center">
-								event type
-								<p-columnFilter type="text" field="eventType" display="menu" placeholder="Search by country"></p-columnFilter>
+								Event Type
+								<p-columnFilter type="text" field="eventType" display="menu" placeholder="Event Type"></p-columnFilter>
 							</div>
 						</th>
 						<th>
@@ -61,13 +57,13 @@
 								Check event
 								<p-columnFilter field="activity" matchMode="between" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
 									<button pButton></button>
-									<ng-template pTemplate="filter" let-filter="filterCallback">
+									<!-- <ng-template pTemplate="filter" let-filter="filterCallback">
 										<p-slider [range]="true" (onSlideEnd)="filter($event.values)" styleClass="m-3" [style]="{'min-width': '12rem'}" ></p-slider>
 										<div class="flex align-items-center justify-content-between px-2">
 											<span>Value</span>
 											<span>Value</span>
 										</div>
-									</ng-template>
+									</ng-template> -->
 								</p-columnFilter> 
 							</div>
 						</th>
@@ -75,7 +71,6 @@
 				</ng-template>
 				<ng-template pTemplate="body" let-eventList>
 					<tr >
-						<!-- {{eventList.id}} -->
 						<td style="min-width: 12rem;">
 							{{eventList.eventName}}
 						</td>
@@ -94,12 +89,8 @@
 						<td style="min-width: 12rem;">
 							{{eventList.maxParticipants}}
 						</td>
-
-						<td  *ngIf="!checkEventReg.includes(eventList.id)" style="min-width: 12rem;">
-							<button (click)="checkEvent(eventList.id)" pButton label="check this event" class="p-button-outlined mb-2" icon="pi pi-search-plus"></button>
-						</td>
-						<td  *ngIf="checkEventReg.includes(eventList.id)" style="min-width: 12rem;">
-							<button (click)="checkEvent(eventList.id)" pButton label="Cancel event" class="p-button-danger mb-2" icon="pi pi-search-plus"></button>
+						<td style="min-width: 12rem;">
+							<button (click)=manageEvent(eventList.id) pButton label="Modify Event" class="p-button-outlined mb-2" icon="pi pi-search-plus"></button>
 						</td>
 					</tr>
 				</ng-template>
@@ -110,15 +101,16 @@
 				</ng-template>
     		</p-table>
 		</div>
-		<app-singleeventview
+		<app-signleeventmanager
 			*ngFor = "let event of allEventWithId"
 			[id] = event.id
 			[name] =event.name
 			[description] = event.description
 			[city]="event.city"
 			[date]="event.date"
+			[address]="event.address"
 			>
-		</app-singleeventview>
+		</app-signleeventmanager>
 	</div>
 </div>
 </div>

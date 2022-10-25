@@ -22,8 +22,20 @@ export class AuthServiceUserService {
 
   isConnectUser:boolean = false
   $isConnectUser: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.verifyLogged())
+  $connectedUserId : BehaviorSubject<string|null> = new BehaviorSubject<string|null>(this.checkId())
+
 
   constructor(private client : HttpClient) { }
+
+  
+  checkId(){
+    if(localStorage.getItem("userIdConnected") != null)
+      return localStorage.getItem("userIdConnected")
+    else 
+      return null
+  }
+
+
 
   verifyLogged(){
     let tmp = localStorage.getItem("isConnectUser")
@@ -39,14 +51,16 @@ export class AuthServiceUserService {
 
   
   checklogin(userName : string, password : string): Observable<user[]>{
-    return this.client.get<user[]>(this.url + "user")
+    return this.client.get<user[]>(this.url + "user/")
     .pipe(
       map(user=> user.filter(user =>user.userName === userName && user.password == password))) 
   }
 
-  login(userName: string, password:string){ 
+  login(userName: string, password:string, idUser : number){ 
     this.isConnectUser = true
     localStorage.setItem("isConnectUser","true")
+    localStorage.setItem("idUserConnected",`${idUser}`)
+
     this.emit_isConnect()
   }
 
