@@ -92,7 +92,7 @@ export class UserregistredeventComponent implements OnInit {
     checkEvent(eventId:number){
     // this.router.navigate([this.router.url,"event",eventId])
     // this.display = true
-     this.eventServe.getAllEvent().subscribe((allEvents:any)=>{
+     this.eventServe.getAllEvent().then((allEvents:any)=>{
       allEvents.forEach((element:any)=>{
         element.forEach((res:any)=>{
           if(res.id === eventId)

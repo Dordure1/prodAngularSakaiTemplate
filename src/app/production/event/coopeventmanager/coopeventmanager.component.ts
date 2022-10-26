@@ -46,7 +46,7 @@ async displayEvent() {
     })
 }
  manageEvent(eventId:number){
-     this.eventServe.getAllEvent().subscribe((allEvents: any)=>{
+     this.eventServe.getAllEvent().then((allEvents: any)=>{
       allEvents.forEach((element:any)=>{
         element.forEach((res:any)=>{
           if(res.id === eventId)

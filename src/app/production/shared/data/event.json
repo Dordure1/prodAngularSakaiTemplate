@@ -51,6 +51,19 @@
       "description": "Venez fêter le nouvel an parmis nous",
       "type": "festival",
       "id": 4
+    },
+    {
+      "organizationName": "Belgrains",
+      "eventName": "Play Zone @Technobel",
+      "email": "belgrains@belgrains.be",
+      "city": "Ciney",
+      "address": "allée des artisants ",
+      "addressNumber": 19,
+      "maxParticipants": 60,
+      "date": "2022-11-07T09:00",
+      "description": "Première présentation de Belgrain à Technobel envue de la play zone",
+      "type": "Other",
+      "id": 5
     }
   ]
 }

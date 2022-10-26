@@ -31,7 +31,7 @@ export class EventService {
   ) { }
 
 
-  getAllEvent(){
+  async getAllEvent(){
     return this.client.get(this.urlEvent + "event")
   }
 
