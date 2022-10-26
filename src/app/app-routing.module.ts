@@ -29,7 +29,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
             { path: 'sakai/pages/notfound', component: NotfoundComponent },
 
 
-            { path: '**', redirectTo: 'pages/notfound' },
+            { path: '**', redirectTo: 'sakai/pages/notfound' },
         ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
     ],
     exports: [RouterModule]

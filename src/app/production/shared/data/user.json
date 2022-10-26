@@ -7,6 +7,14 @@
       "city": "",
       "address": "",
       "number": ""
+    },
+    {
+      "userName": "dorian.vanhoutte1@gmail.com",
+      "password": "dorian",
+      "city": "Louvain-la-neuve",
+      "address": "rue de la pièrreère",
+      "addressNumber": 3,
+      "id": 2
     }
   ]
 }
