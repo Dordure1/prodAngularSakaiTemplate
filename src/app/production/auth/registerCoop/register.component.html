@@ -15,7 +15,7 @@
                         <div class="form-group col-md-6">
                             <label for="coopName">Cooperative Name <label class="text-red-500"> *</label></label>
                             <input [(ngModel)]="organisationName" type="text" class="form-control" id="coopName" placeholder="coopName" formControlName="coopName">
-                            <p class="text-red-500" *ngIf="myForm.controls['coopName'].errors?.['minlength']">cooperative name must be composed at least by 3 characters</p>
+                            <p registrationValidators class="text-red-500" *ngIf="myForm.controls['coopName'].errors?.['minlength']">cooperative name must be composed at least by 3 characters</p>
                         </div>
                         
                         <div class="form-group col-md-8">

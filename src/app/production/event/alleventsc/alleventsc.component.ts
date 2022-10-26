@@ -48,7 +48,7 @@ export class AlleventscComponent implements OnInit {
 
   async getAllEvent(){
     await this.eventServe.getAllEvent().subscribe((allEvents: any)=>{      
-      allEvents.forEach((element:any)=>{
+      allEvents.forEach((element : any) => {  
           element.forEach((res : eventTab)=>{
             this.eventList.push(res)           
           })
