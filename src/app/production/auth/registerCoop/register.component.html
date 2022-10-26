@@ -8,14 +8,14 @@
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email <label class="text-red-500">*</label></label>
                             <input [(ngModel)]="userName" type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email" >
-                            <p class="text-red-500" *ngIf="myForm.controls['email'].errors?.['email']">Email must be a valid email address: example@email.com</p>
-                            <p class="text-red-500" *ngIf="myForm.controls['email'].errors?.['checkUserExists']">Email already been used</p>
+                            <p  class="text-red-500" *ngIf="myForm.controls['email'].errors?.['email']">Email must be a valid email address: example@email.com</p>
+                            <p class="text-red-500"  *ngIf="myForm.controls['email'].errors?.['checkUserExists']">Email already been used</p>
                         </div>
  
                         <div class="form-group col-md-6">
                             <label for="coopName">Cooperative Name <label class="text-red-500"> *</label></label>
                             <input [(ngModel)]="organisationName" type="text" class="form-control" id="coopName" placeholder="coopName" formControlName="coopName">
-                            <p registrationValidators class="text-red-500" *ngIf="myForm.controls['coopName'].errors?.['minlength']">cooperative name must be composed at least by 3 characters</p>
+                            <p class="text-red-500" *ngIf="myForm.controls['coopName'].errors?.['minlength']">cooperative name must be composed at least by 3 characters</p>
                         </div>
                         
                         <div class="form-group col-md-8">

@@ -19,10 +19,11 @@ import { MenuItemContent, MenuModule } from 'primeng/menu';
 import { NavbarcComponent } from './production/navbar/navbarc/navbarc.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
+import { RegistrationDirective } from './production/shared/directives/registration.directive';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, NavbarcComponent
+        AppComponent, NotfoundComponent, NavbarcComponent, RegistrationDirective
     ],
     imports: [
         AppRoutingModule,

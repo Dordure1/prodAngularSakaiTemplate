@@ -8,7 +8,7 @@ export class registrationValidatorsDirective{
 
     constructor(private el : ElementRef)
     {
-        this.el.nativeElement.style.color='#eceff1'
+        this.el.nativeElement.classList ='text-red-500'
     }
 
 }
